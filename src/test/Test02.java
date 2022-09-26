@@ -2,29 +2,25 @@ package test;
 
 public class Test02 {
 
-	public int solution(int n) {
-		int answer = (n-1);
-		
-		if ((n-1)%2==0)
-			answer = 2;
-		
-		int odd = 3;
-		while (odd<n) {
-			if ((n-1)%odd==0) {
-				answer = odd;
-				break;
-			} else {
-				odd += 2;
-			}
+	public static String solution(String s) {
+		String[] a = s.split(" ");
+
+		int min, max, n;
+		min = max = Integer.parseInt(a[0]);
+
+		for (int i=1 ; i<a.length ; i++) {
+			n = Integer.parseInt(a[i]);
+			if (max < n) max = n;
+			if (min > n) min = n;
 		}
 
-		return answer;
+		return min + " " + max ;
 	}
 
 	public static void main(String[] args) {
 
-		Test02 a = new Test02();
-		System.out.println(a.solution(351247));
+		System.out.println(solution("1 2 3 4"));
+
 
 	}
 

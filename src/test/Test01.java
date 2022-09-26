@@ -2,25 +2,25 @@ package test;
 
 public class Test01 {
 
-public static int solution(int num) {
-        
-        int count = 0;
-        
-        while (num!=1) {
-            if (num%2==0) {
-                num /= 2;
-            } else if (num%2==1) {
-                num = (num * 3) + 1;
-            }
-            count++;
-        }
-        
-        return count>500 ? -1 : count;
+	public static String solution(String s) {
+		String[] a = s.split(" ");
+
+		int max = 0;
+		int min = 10000;
+
+		for (int i=0 ; i<a.length ; i++) {
+			if (Integer.parseInt(a[i]) > max)
+				max = Integer.parseInt(a[i]);
+			if (Integer.parseInt(a[i]) < min)
+				min = Integer.parseInt(a[i]);
+		}
+
+		return min + " " + max ;
     }
 
 	public static void main(String[] args) {
 
-		System.out.println(solution(626331));
+		System.out.println(solution("1 2 3 4"));
 
 
 	}
